@@ -4,11 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Desafio-Leo PHP</title>
+    <title>santri</title>
 
-	  
-	  <link rel="stylesheet" href="css/static/css/desfio-leo.css">
-	  <link href="css/dataTables.bootstrap.css" rel="stylesheet"><!-- DataTables Responsive CSS -->
+	  <link rel="stylesheet" href="../assets/css/static/css/w3.css">
+	  <link rel="stylesheet" href="../assets/css/static/css/santri.css">
+	  <link rel="stylesheet" href="../assets/css/static/css/toastr.css">
+
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/brands.css">
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/fontawesome.css">
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/regular.css">
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/solid.css">
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/svg-with-js.css">
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/v4-shims.css">
+      
+	  <link href="../assets/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet"><!-- DataTables Responsive CSS -->
 	
       <style>
 		  table {
@@ -55,7 +64,7 @@ ini_set('display_errors', 1 );
 
 			// abre conexao com BD
 
-			$cfg		 = "config-desafio-leo.ini";	
+			$cfg		 = "config-santri.ini";	
 			if ( $cfg = parse_ini_file("cfg.app/".$cfg,true) ) {
 				$type    	= $cfg['cnxmysql']['type'];
 				$host    	= $cfg['cnxmysql']['host'];
@@ -129,9 +138,10 @@ ini_set('display_errors', 1 );
 	</div>
 </table>
 </html>			
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script><!-- DataTables JavaScript Procura tabela iDisplayLength:8 -->
-	<script src="js/dataTables.bootstrap.min.js"></script><!-- Page-Level Demo Scripts - Tables - Use for reference -->	
+	<script src="../assets/css/static/js/jquery.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="../assets/js/tabelas/dataTables/media/js/jquery.dataTables.min.js"></script><!-- DataTables JavaScript Procura tabela iDisplayLength:8 -->
+	<script src="../assets/js/tabelas/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script><!-- Page-Level Demo Scripts - Tables - Use for reference -->	
 	
  
 <script>	

@@ -2,7 +2,6 @@
 
 //namespace classes;
 //use class TLogin; 
-error_reporting(0);
 
 class TLogin{
 	//metodos e atributos da classe
@@ -14,7 +13,7 @@ class TLogin{
     function __construct()
     {
 		session_start();
-		if ( $cfg = parse_ini_file("cfg.app/config-desafio-leo.ini",true) ) {
+		if ( $cfg = parse_ini_file("../../cfg.app/config-santri.ini",true) ) {
 			 $this->usuario	= $cfg['cnxmysql']['usersys'];
 		} 
 		$this->sessao	= 0;
@@ -34,7 +33,7 @@ class TLogin{
 	function usuario()
     {
 		if ( !isset($_SESSION['sessionid']) ) {
-			if ( $cfg = parse_ini_file("cfg.app/config-desafio-leo.ini",true) ) {
+			if ( $cfg = parse_ini_file("../../cfg.app/config-santri.ini",true) ) {
 				 $this->usuario	= $cfg['cnxmysql']['usersys'];
 			} 				
 		} else {
