@@ -8,12 +8,12 @@ error_reporting(1);
 ini_set(display_errors, 1);
 ?>
 	<head>
-		<title>teste Santri - PHP</title>
+		<title>teste - PHP</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 		<meta charset="utf-8">
 		
 
-		<link href="assets/images/santri.png" rel="shortcut icon" />
+		<link href="assets/images/desafio-leo.png" rel="shortcut icon" />
 		<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 		<link href="assets/css/appca.css" rel="stylesheet" type="text/css">
 		<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
