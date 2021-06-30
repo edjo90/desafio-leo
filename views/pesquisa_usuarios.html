@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>santri</title>
+
+	  <link rel="stylesheet" href="../assets/css/static/css/w3.css">
+	  <link rel="stylesheet" href="../assets/css/static/css/santri.css">
+	  <link rel="stylesheet" href="../assets/css/static/css/toastr.css">
+
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/brands.css">
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/fontawesome.css">
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/regular.css">
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/solid.css">
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/svg-with-js.css">
+	  <link rel="stylesheet" href="../assets/css/static/css-awesome/v4-shims.css">
+
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+
+  </head>
+  <body>
+    <script src="../assets/css/static/js/jquery.js"></script>
+    <div>
+		<div id="lista_usuarios" class="w3-margin">
+			<input class="w3-input w3-border w3-margin-top" type="text" placeholder="Nome">
+			<button class="w3-button w3-theme w3-margin-top">Buscar</button>
+			<button class="w3-button w3-theme w3-margin-top w3-right">Cadastrar novo usuário</button>
+			
+			<table id="tabbela" class="display nowrap tabbela" style="width: 100% !important;"> 
+			<thead>
+				<tr>
+				<th scope="col">id usuario</th>
+				<th scope="col">email     </th>
+				<th scope="col">Nome      </th>
+				<th scope="col">Editar    </th>
+				</tr>
+			</thead> 
+
+
+
+<?php
+	Header("Access-Control-Allow-Origin: *"); 
+	session_start(); 
+
+	error_reporting(1);
+	ini_set('display_errors', 1 );
+	
+	$login 	     = "edjo90@yahoo.com"; 		//$_POST['login_mail'];
+	$senha	     = md5("pk2k3@noslimde");   //md5($_POST['login_pwd']);
+	
+	spl_autoload_register( function ($classe) { 
+		$pastas = array('../controller/conexao');
+		foreach ($pastas as $pasta)	{
+			if (file_exists("{$pasta}/{$classe}.class.php")) {
+					include_once "{$pasta}/{$classe}.class.php";
+			}
+		}
+	});
+
+	//----------- Conexao a Base de Dados--------------------------------------------		
+		include_once('../controller/conexao/TConexao.class.php');
+										 
+		$conn  	= new PDO("mysql:host={$host};port={$port};dbname={$name}", $user, $pass);
+
+		$consulta = $conn->prepare("
+									SELECT  u.usua_id, u.usua_email, u.usua_senha, u.usua_login
+									, u.usua_nm, u.usua_nivel, u.usua_grup_id, u.usua_status
+									FROM segu_usuarios AS u
+								"); 
+
+		$consulta->execute();
+		
+			if ( $consulta->rowCount() ) {
+				//include_once "../controller/app.widgets/TSession.class.php";
+				$Sessao = new TSession();
+				$var	= "sessao";
+				// seta variaveis da sessao
+				$Sessao->setValue($var,$value); 
+				// percorre os resultados via iteração e gera dados da sessao
+				foreach($consulta as $row) { // exibe os resultados
+										$docu_id			= $row["usua_id"];
+										$docu_email     	= $row["usua_email"];
+										$docu_nome  		= $row["usua_nm"];
+										
+										$dados	=	array( 
+															0  =>  $docu_id,
+															1  =>  $docu_email,
+															2  =>  $docu_nome
+														);
+														
+										$dadosobj = implode('|',$dados);				
+?>                          
+				<tr>
+					<td><?= $docu_id;	    ?></td>
+					<td><?= $docu_email;   	?></td>
+					<td><?= $docu_nome;		?></td>   		
+					<td><a href="javascript:abre_registro('<?=$docu_id?>','<?=$dadosobj?>')" data-target="#myModalRegistro"><span class="fa fa-edit"></span></a></td>
+				</tr>
+<?php
+
+				}
+			}
+		
+	
+		include_once "controller/edita.php";
+
+	$conn   = 	null;	
+	echo (json_encode($retorno));
+	
+?>	
+
+		</div>
+    </div>
+  </body>
+</html>

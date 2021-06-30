@@ -1,0 +1,33 @@
+ 
+  <div id="slider">
+      <a href="#" class="trs"><button id="1"><img src="../imgs/img1.jpg" alt="Slide Legenda da imagem 1" /></button></a>
+      <a href="#" class="trs"><button id="2"><img src="../imgs/img2.jpg" alt="Slide Legenda da imagem 2" /></button></a>
+	  <a href="#" class="trs"><button id="3"><img src="../imgs/img3.jpg" alt="Slide Legenda da imagem 3" /></button></a>
+   </div>
+
+<script>
+
+
+
+window.onload = function() {
+	var divs = document.getElementsByTagName("button");
+	
+	for(var i=0; i<divs.length; i++) {
+		divs[i].addEventListener("click", function() {
+			this.style.backgroundColor = "#ff0000";
+				if( this.id == "1" ){
+					var imagem='../imgs/img1.jpg';	
+					
+				} else if (this.id == "2"){
+				    var imagem='../imgs/img2.jpg';	
+					
+				} else if (this.id == "3"){
+				    var imagem='../imgs/img3.jpg';	
+					
+				}
+            alert(imagem);				
+		});
+	}
+}	
+	 
+</script>

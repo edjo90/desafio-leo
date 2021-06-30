@@ -1,0 +1,123 @@
+<?php
+/*
+ * classe TTransaction
+ *  Esta classe provê os métodos
+ *  necessários manipular transações
+ */
+final class TTransaction
+{
+    private static $conn;     // conexão ativa
+    private static $logger;   // objeto de LOG
+	private static $arqdia;
+    
+    /*
+     * método __construct()
+     *  Está declarado como private para
+     *  impedir que se crie instâncias de TTransaction
+     */
+    private function __construct(){}
+    
+    /*
+     * método open()
+     *  Abre uma transação e uma conexão ao BD
+     *  @param $database = nome do banco de dados
+     */
+    public static function open($database)
+    {
+        // abre uma conexão e armazena 
+        // na propriedade estática $conn
+        if (empty(self::$conn))
+        {
+            self::$conn = TConnection::open($database);
+            // inicia a transação
+            self::$conn->beginTransaction();
+            // desliga o log de SQL
+            self::$logger = NULL;
+        }
+    }
+    
+    /*
+     * método get()
+     *  Retorna a conexão ativa da transação
+     */
+    public static function get()
+    {
+        // retorna a conexão ativa
+        return self::$conn;
+    }
+    
+    /*
+     * método rollback()
+     *  Desfaz todas operações realizadas na transação
+     */
+    public static function rollback()
+    {
+        if (self::$conn)
+        {
+            // desfaz as operações realizadas
+            // durante a transação
+            self::$conn->rollback();
+            self::$conn = NULL;
+        }
+    }
+    
+    /*
+     * método close()
+     *  Aplica todas operações realizadas e fecha a transação
+     */
+    public static function close()
+    {
+        if (self::$conn)
+        {
+            // aplica as operações realizadas
+            // durante a transação
+            self::$conn->commit();
+            self::$conn = NULL;
+        }
+    }
+    
+    /*
+     * método setLogger()
+     *  define qual estratégia (algoritmo de LOG será usado)
+     */
+    public static function setLogger(TLogger $logger)
+    {
+        self::$logger = $logger;
+    }
+    
+	/*
+     * método setLogg()
+     *  define qual estratégia (algoritmo de LOG será usado)
+     */
+    public static function setaLog(TLogger $arqdia)
+    {
+        self::$arqdia = $arqdia;
+    }
+	
+	/* método log()
+     *  armazena uma mensagem no arquivo de LOG
+     *  baseada na estratégia ($logger) atual
+     */
+    public static function log($message)
+    {
+        // verifica existe um logger
+        if (self::$logger)
+        {
+            self::$logger->write($message);
+        }
+    }
+    /*
+     * método log()
+     *  armazena uma mensagem no arquivo de LOG
+     *  baseada na estratégia ($logger) atual
+     */
+    public static function logAdj($message,$lastrecno,$nome,$protocolo,$cnpj,$arqdia)
+    {
+        // verifica existe um logger
+        if (self::$arqdia)
+        {
+            self::$arqdia->escrever($message,$lastrecno,$nome,$protocolo,$cnpj,$arqdia);
+        }
+    }
+}
+?>

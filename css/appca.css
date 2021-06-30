@@ -1,0 +1,42 @@
+div aviso1.paragrafo1{
+	top			: 20px;
+    font-size	: 25px;     
+    color	 	: #ffffff;
+    padding	 	: 5% 10%;     
+}
+.paragrafo2{
+         
+    color: #99ccff;
+         
+}
+.paragrafo3{
+         
+    color: #0bf526;
+         
+}
+
+#aviso1	{ 
+		  position			: absolute;
+	      width				: 160px;
+		  height			: 110px;
+  		  right  			: 150px;
+          top   			:  40px;
+		  border			: 0px solid #999;
+		  padding			: 45px 18px;
+		  border-radius		: 5px;
+		  text-align		: center;
+		  color				: #fff;
+		  font-size			: 20px;
+		  opacity			: 0.55;
+		  background-color	: transparent;
+		  background-repeat	: no-repeat;  
+		  background-image	: url('../images/speech3-bubbles.png'); 
+		  display 			: none;
+		  z-index			: 1000000;
+} 
+
+#campo_contador	{
+
+		  display 			: none;
+	
+}
