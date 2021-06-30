@@ -29,7 +29,7 @@ Base de Dados, MySQL dump desafio_leo.sql,
 E:\server-www\mysql\bin>mysql --version
 mysql  Ver 15.1 Distrib 10.4.11-MariaDB, for Win64 (AMD64), source revision 7c2c420b70b19cc02b5281127205e876f3919dad
 
-Usuario : admin@desafio_leo.com.br	1234
+Usuario : admin@desafio-leo.com.br	1234
 
 
 
