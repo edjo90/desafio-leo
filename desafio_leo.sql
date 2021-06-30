@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Jun-2021 às 04:46
+-- Tempo de geração: 30-Jun-2021 às 12:38
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.3.14
 
@@ -212,9 +212,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `nivel`, `id_grup`, `status`, `rg_ie`, `cpf_cnpj`, `endereco`, `cep`, `esta_ibge`, `muni_ibge`, `complemento`, `bairro`, `id_fone`, `site`, `data_nasc`, `pessoa_tp`, `fornecedor`, `id_fornece`, `vendedor`, `id_vende`, `funcionario`, `id_funciona`, `associado`, `id_associa`, `contato`, `obs`) VALUES
-(1, 'Joaquim, Edmilson', 'admin@ca.com.br', NULL, '$2y$10$DDDAmwDpz7ZhXjykvSkjt.RpG2j3jadLJMGL.nXfUhbMGiutKIApe', NULL, '2021-04-27 22:48:40', '2021-04-27 22:48:40', 0, 0, 0, '0', 0, '', '0', 0, 0, '', '', 0, '', '2021-04-27', 'F', 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, '', ''),
-(2, 'Usuario CA-Sistema', 'usuario@ca.com.br', NULL, '$2y$10$qDYawNOuAllVfejRGA86NOFDXO7mGWZ/cff6uTkIDR71mSGvdU352', NULL, '2021-04-27 22:48:40', '2021-04-27 22:48:40', 0, 0, 0, '0', 0, '', '0', 0, 0, '', '', 0, '', '2021-04-27', 'F', 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, '', ''),
-(3, 'Edmilson Joaquim', 'edmilson.joaquim@centroavogados.com.br', NULL, '$2y$10$7AST2KkGb0sq0geLVZK46.UGvdbiQJku2UlpJ/RDgJIW39LfgSQxa', NULL, '2021-04-27 22:48:41', '2021-04-27 22:48:41', 0, 0, 0, '0', 0, '', '0', 0, 0, '', '', 0, '', '2021-04-27', 'F', 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, '', '');
+(1, 'Joaquim, Edmilson', 'admin@desafio-leo.com.br', NULL, '$2y$10$DDDAmwDpz7ZhXjykvSkjt.RpG2j3jadLJMGL.nXfUhbMGiutKIApe', NULL, '2021-04-27 22:48:40', '2021-04-27 22:48:40', 0, 0, 0, '0', 0, '', '0', 0, 0, '', '', 0, '', '2021-04-27', 'F', 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, '', ''),
+(2, 'Usuario CA-Sistema', 'usuario@desafio-leo.com.br', NULL, '$2y$10$qDYawNOuAllVfejRGA86NOFDXO7mGWZ/cff6uTkIDR71mSGvdU352', NULL, '2021-04-27 22:48:40', '2021-04-27 22:48:40', 0, 0, 0, '0', 0, '', '0', 0, 0, '', '', 0, '', '2021-04-27', 'F', 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, '', ''),
+(3, 'Edmilson Joaquim', 'edmilson.joaquim@desafio-leo.com.br', NULL, '$2y$10$7AST2KkGb0sq0geLVZK46.UGvdbiQJku2UlpJ/RDgJIW39LfgSQxa', NULL, '2021-04-27 22:48:41', '2021-04-27 22:48:41', 0, 0, 0, '0', 0, '', '0', 0, 0, '', '', 0, '', '2021-04-27', 'F', 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, 'FALSE', 0, '', '');
 
 --
 -- Índices para tabelas despejadas
