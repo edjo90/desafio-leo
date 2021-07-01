@@ -7,7 +7,7 @@ $loginapp = new TLogin;
 		<div class="">
 			<div class="mais" style="" onclick="openNav()">&#9776;</div><!-- menu lateral / para desativar comente ou exclua -->
 			<div class="logo_container">
-				<span class="logo_helper"></span>
+				<div class="logo_helper"></div>
 				<img width='190px;' src="assets/images/logo_desafio-leo.png" id=""  />				
 			</div>
 			
@@ -39,7 +39,7 @@ $loginapp = new TLogin;
     <!-- modal login-->
     <div id="myModalLogin" class="modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <div class="close">&times;</div>
 			<div class='modal-header' style='min-height: 45px !important; background-image: linear-gradient(to top, #0075be, #005a9c); '>
 				<h4 class='modal-title'> <font style='font-weight: bold; color: #FFFFFF; font-size: 1.0em;'>Login</font></h4>
 			</div>
@@ -73,7 +73,7 @@ $loginapp = new TLogin;
     <div id="myModalRegistros" class="modal">
         	
         <div class="col-md-12" style="top: -40px;">
-          <span class="close">&times;</span>
+          <div class="close">&times;</div>
 			<div class='modal-header' style='border-radius: 10px 10px 0px 0px; min-height: 45px !important; background-image: linear-gradient(to top, #0075be, #005a9c); '>
 				<h4 class='modal-title'> <font style='font-weight: bold; color: #FFFFFF; font-size: 1.0em;'>Usuarios</font></h4>
 			</div>
@@ -94,7 +94,7 @@ $loginapp = new TLogin;
         <div class="modal-content">
           
 			<div class='modal-header' style='min-height: 45px !important; background-image: linear-gradient(to top, #0075be, #005a9c); '>
-				<span class="close1"  style='align:right font-size:10px;'>x</span>
+				<div class="close1"  style='align:right font-size:10px;'>x</div>
 			    <h4 class='modal-title'><font style='font-weight: bold; color: #FFFFFF; font-size: 1.0em;'>Cadastro Usuario</font></h4>				
 			</div>
 
