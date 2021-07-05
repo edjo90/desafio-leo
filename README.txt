@@ -1,13 +1,10 @@
 # README #
 
-## Desafio LEO Learning ##
-
 ### Orientações ###
 
 Desenvolvedor; Edmilson joaquim
 email: edjo90@gmail.com fone:11 985011431.
 
-* e-mail para plataforma@leolearning.com com a url do seu repositório, com o assunto [Desafio LEO] - Finalizado.
 
 
 ### Front-end ###
